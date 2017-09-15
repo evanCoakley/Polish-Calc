@@ -13,18 +13,18 @@ public class Main {
         checkResult(rpnExpression, expectedResult, actualResult);
 
         // Write tests for the other operators (-, *, /)
-        rpnExpression = "4.2, 3.7, -";
+        rpnExpression = "4.2,3.7,-";
         expectedResult =  0.5;
         actualResult = rpc.calculate(rpnExpression);
         checkResult(rpnExpression, expectedResult, actualResult);
 
-        rpnExpression = "15.6, 2.5, *";
+        rpnExpression = "15.6,2.5,*";
         expectedResult = 39;
         actualResult = rpc.calculate(rpnExpression);
         checkResult(rpnExpression, expectedResult, actualResult);
 
-        rpnExpression = "4, 8, /";
-        expectedResult: 2;
+        rpnExpression = "8,4,/";
+        expectedResult = 2;
         actualResult = rpc.calculate(rpnExpression);
         checkResult(rpnExpression, expectedResult, actualResult);
 

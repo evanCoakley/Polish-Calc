@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class ReversePolishCalc {
 
-    double topStack = -1;
+    int topStack = -1;
 
     // The array of the input string split up
     private String[] tokens;
@@ -33,7 +35,7 @@ public class ReversePolishCalc {
             } else if(tokens[i].equals("-")) {
                 operand1 = pop();
                 operand2 = pop();
-                result = operand1 + operand2;
+                result = operand2 - operand1;
                 push(result);
             } else if(tokens[i].equals("*")) {
                 operand1 = pop();
@@ -43,7 +45,7 @@ public class ReversePolishCalc {
             } else if(tokens[i].equals("/")) {
                 operand1 = pop();
                 operand2 = pop();
-                result = operand1 / operand2;
+                result = operand2 / operand1;
                 push(result);
             }
         }
@@ -54,13 +56,21 @@ public class ReversePolishCalc {
 
     private void push(String number) {
         // push on the stack
+        stack[++topStack] = number;
     }
 
     private void push(double d) {
         // change the double to a string and then push it on the stack
+        stack[++topStack] = String.valueOf(d);
     }
 
     private double pop() {
         // remove the string from the top of the stack and convert it to a double and return it
+        return Double.valueOf(stack[topStack--]);
+
+
     }
+
+
 }
+
