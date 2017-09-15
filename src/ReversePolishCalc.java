@@ -11,14 +11,41 @@ public class ReversePolishCalc {
     public double calculate(String input) {
 
         // 1. Use the String split method to split the string into tokens at the commas
-        tokens = ...
+        tokens = input.split(",");
 
         // 2. Allocate a stack as big as the number of tokens
-        stack = ...
+        stack = new String[tokens.length];
+
+        double operand1;
+        double operand2;
+        double result;
 
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
+            if(!tokens[i].equals("+") && !tokens[i].equals("-") && !tokens[i].equals("*") && !tokens[i].equals("/")) {
+                push(tokens[i]);
+            } else if (tokens[i].equals("+")) {
+                operand1 = pop();
+                operand2 = pop();
+                result = operand1 + operand2;
+                push(result);
+            } else if(tokens[i].equals("-")) {
+                operand1 = pop();
+                operand2 = pop();
+                result = operand1 + operand2;
+                push(result);
+            } else if(tokens[i].equals("*")) {
+                operand1 = pop();
+                operand2 = pop();
+                result = operand1 * operand2;
+                push(result);
+            } else if(tokens[i].equals("/")) {
+                operand1 = pop();
+                operand2 = pop();
+                result = operand1 / operand2;
+                push(result);
+            }
         }
 
         // 4. return the result
