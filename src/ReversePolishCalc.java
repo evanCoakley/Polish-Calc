@@ -1,6 +1,6 @@
 public class ReversePolishCalc {
 
-    // You'll need a variable here to keep track of the top of the stack
+    double topStack = -1;
 
     // The array of the input string split up
     private String[] tokens;

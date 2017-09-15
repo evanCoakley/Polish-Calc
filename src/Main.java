@@ -13,12 +13,26 @@ public class Main {
         checkResult(rpnExpression, expectedResult, actualResult);
 
         // Write tests for the other operators (-, *, /)
+        rpnExpression = "4.2, 3.7, -";
+        expectedResult =  0.5;
+        actualResult = rpc.calculate(rpnExpression);
+        checkResult(rpnExpression, expectedResult, actualResult);
+
+        rpnExpression = "15.6, 2.5, *";
+        expectedResult = 39;
+        actualResult = rpc.calculate(rpnExpression);
+        checkResult(rpnExpression, expectedResult, actualResult);
+
+        rpnExpression = "4, 8, /";
+        expectedResult: 2;
+        actualResult = rpc.calculate(rpnExpression);
+        checkResult(rpnExpression, expectedResult, actualResult);
 
         // Uncomment this test which has many operators
-//        rpnExpression = "5,1,2,+,4,*,+,3,-";
-//        expectedResult = 14.0;
-//        actualResult = rpn.calculate(rpnExpression);
-//        checkResult(rpnExpression, expectedResult, actualResult);
+        rpnExpression = "5,1,2,+,4,*,+,3,-";
+        expectedResult = 14.0;
+        actualResult = rpc.calculate(rpnExpression);
+        checkResult(rpnExpression, expectedResult, actualResult);
     }
 
     private static void checkResult(String expression, double expected, double actual) {
